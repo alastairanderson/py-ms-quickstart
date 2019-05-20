@@ -1,0 +1,7 @@
+{
+    "about": {
+        "build_config": "dev",
+        "service": "company.project.service",
+        "version": "0.0.1"
+    }
+}
