@@ -1,0 +1,4 @@
+
+
+# Remove if not using as an API
+Flask==1.0.2
