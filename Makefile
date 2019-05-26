@@ -22,6 +22,8 @@ shoes: socks
 socks: pullover
 	@echo "Putting on socks."
 
+test-env:
+	@echo $(DW_NOTIFY__EMAIL)
 
 copy-to-bin:
 	rm -rf ./bin
@@ -34,5 +36,5 @@ copy-to-bin:
 	cp requirements.txt ./bin/requirements.txt
 	cp server.py ./bin/server.py
 
-build-docker-prod-img:
-	docker build .
+build-docker-prod-img: copy-to-bin
+	docker build -t <company-name>/<service-name>:<version> .

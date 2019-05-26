@@ -1,4 +1,4 @@
-# python-starter
+# python microservice quickstart
 
 ## Purpose
 
@@ -34,7 +34,6 @@ pip install -r requirements.txt
 
 ## TODO
 
--[] Rename this whole project to be "py-ms-quickstart" for "Python Microservice Quickstart"
 -[] Use the Alpine distro in the Dockerfile to minimise the docker image size
 -[] Create proper requirements-dev.txt file
 -[] Create tests - use a common python testing framework

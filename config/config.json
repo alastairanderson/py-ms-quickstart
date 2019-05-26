@@ -3,5 +3,9 @@
         "build_config": "dev",
         "service": "company.project.service",
         "version": "0.0.1"
+    },
+    "logging": "",
+    "hosting": {
+        "port": "5000"
     }
 }

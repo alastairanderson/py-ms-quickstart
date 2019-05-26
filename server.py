@@ -1,16 +1,20 @@
 #coding: utf-8
 
-import os
-import config
+import http
 
 from flask import Flask, request
-from bot import bot
 
+
+config_file_path = ".config/config.json"
+config_service = ConfigService(config_file_path)
+
+# Instantiate additional services here
 
 app = Flask(__name__)
 
 @app.route("/", methods=['POST'])
 def root():
-    return bot(request)
+    # Call any required services
+    return '', http.HTTPStatus.NO_CONTENT
 
-app.run(port=os.environ['PORT'])
+app.run(port=config_service.hosting_port)

@@ -12,6 +12,9 @@ class ConfigService:
         self.version = None
         self.build_config = None
 
+        # hosting
+        self.hosting_port = None
+
         self.__read_config()
 #endregion
 
@@ -25,6 +28,11 @@ class ConfigService:
             self.service_name = config_data["about"]["service"]
             self.version = config_data["about"]["version"]
             self.build_config = config_data["about"]["build_config"]
+
+            # os.environ['PORT']
+            self.port = os.environ['HOSTING_PORT'] if os.environ['HOSTING_PORT'] else config_data["hosting"]["port"]
+
+
 
         except KeyError as ke:
             print(f"There was an issue retrieving {ke.args[0]}")
