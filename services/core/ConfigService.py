@@ -33,11 +33,36 @@ class ConfigService:
             self.port = os.environ['HOSTING_PORT'] if os.environ['HOSTING_PORT'] else config_data["hosting"]["port"]
 
 
-
         except KeyError as ke:
             print(f"There was an issue retrieving {ke.args[0]}")
         except Exception as ex:
             print("There was an issue opening " + self.config_file)
         finally:
             data_file.close()
+#endregion
+
+
+#region public methods
+    def update_config(self, key, value):
+        with open(self.config_file, "r") as jsonFile:
+            data = json.load(jsonFile)
+
+        if "." in key:
+            keys = key.split(".")
+            
+            if len(keys) == 2:
+                data[keys[0]][keys[1]] = value
+            elif len(keys) == 3:
+                data[keys[0]][keys[1]][keys[2]] = value
+            elif len(keys) == 4:
+                data[keys[0]][keys[1]][keys[2]][keys[3]] = value
+            elif len(keys) == 5:
+                data[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] = value
+        else:
+            data[key] = value
+
+        with open(self.config_file, "w") as jsonFile:
+            json.dump(data, jsonFile, sort_keys=True, indent=4)
+
+        self.__read_config()
 #endregion

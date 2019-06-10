@@ -7,5 +7,17 @@
     "logging": "",
     "hosting": {
         "port": "5000"
+    },
+    "notifications": {
+        "batch_minutes": "30",
+        "email": {
+            "enabled": true
+        },
+        "message_file_locked": false,
+        "slack": {
+            "channel": "",
+            "enabled": false,
+            "icon_emoji": ":newspaper:"
+        }
     }
 }

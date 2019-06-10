@@ -35,7 +35,13 @@ pip install -r requirements.txt
 ## TODO
 
 -[] Use the Alpine distro in the Dockerfile to minimise the docker image size
+
 -[] Create proper requirements-dev.txt file
+
 -[] Create tests - use a common python testing framework
+
 -[] Create a requirement-prod.txt file
+
 -[] Get this running as a Flask service 
+
+-[] Integrate with IdServ
