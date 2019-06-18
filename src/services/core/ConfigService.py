@@ -30,7 +30,7 @@ class ConfigService:
             self.build_config = config_data["about"]["build_config"]
 
             # os.environ['PORT']
-            self.port = os.environ['HOSTING_PORT'] if os.environ['HOSTING_PORT'] else config_data["hosting"]["port"]
+            self.hosting_port = os.environ['HOSTING_PORT'] if 'HOSTING_PORT' in os.environ else config_data["hosting"]["port"]
 
 
         except KeyError as ke:

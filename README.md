@@ -34,14 +34,14 @@ pip install -r requirements.txt
 
 ## TODO
 
--[] Use the Alpine distro in the Dockerfile to minimise the docker image size
+- Use the Alpine distro in the Dockerfile to minimise the docker image size
 
--[] Create proper requirements-dev.txt file
+- Create development and production builds (separate requirement.txt files)
 
--[] Create tests - use a common python testing framework
+- Template out tests using a common python testing framework
 
--[] Create a requirement-prod.txt file
+- Build out Makefile
 
--[] Get this running as a Flask service 
+- For production builds, look at using nginx https://ianlondon.github.io/blog/deploy-flask-docker-nginx/
 
--[] Integrate with IdServ
+- Integrate with IdServ

@@ -4,8 +4,10 @@ import http
 
 from flask import Flask, request
 
+from services.core.ConfigService import ConfigService
 
-config_file_path = ".config/config.json"
+
+config_file_path = "./config/config.json"
 config_service = ConfigService(config_file_path)
 
 # Instantiate additional services here

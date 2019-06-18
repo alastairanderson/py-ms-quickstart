@@ -6,7 +6,7 @@
     },
     "logging": "",
     "hosting": {
-        "port": "5000"
+        "port": "5005"
     },
     "notifications": {
         "batch_minutes": "30",
