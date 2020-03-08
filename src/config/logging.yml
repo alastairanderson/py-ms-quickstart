@@ -1,0 +1,54 @@
+version: 1
+
+formatters:
+  dev_JsonFormat:
+    format: '{ "datetime":"%(asctime)s", "fileName":"%(filename)s", "levelName":"%(levelname)s", "message":"%(message)s" }'
+    datefmt: 
+  prod_JsonFormat:
+    format: '{ "datetime":"%(asctime)s", "fileName":"%(filename)s", "logRecordCreationTime":"%(created)f", "functionName":"%(funcName)s", "levelNo":"%(levelno)s", "lineNo":"%(lineno)d", "time":"%(msecs)d", "levelName":"%(levelname)s", "message":"%(message)s"}'
+    datefmt: 
+  simpleFormatter:
+    format: "%(levelname)s - %(message)s"
+    datefmt: 
+  
+handlers:
+  dev_bulk_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: dev_JsonFormat
+    filename: '{root_logs_folder}/news/ft/bulk.log'
+    encoding: utf8
+  prod_bulk_file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: prod_JsonFormat
+    filename: '{root_logs_folder}/news/ft/bulk.log'
+    encoding: utf8
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simpleFormatter
+    stream: ext://sys.stdout
+  prod_https:
+    class: loggly.handlers.HTTPSHandler
+    level: DEBUG
+    formatter: prod_JsonFormat
+    url: '{url}'
+
+loggers:
+  dev_bulk_logger:
+    level: DEBUG
+    handlers: [console, dev_bulk_file]
+    propagate: no
+  prod_bulk_logger:
+    level: INFO
+    handlers: [console, prod_bulk_file]
+    propagate: no
+  prod_https_logger:
+    level: INFO
+    handlers: [console, prod_https]
+    propagate: no
+
+root:
+  handlers: [dev_bulk_file, prod_bulk_file, prod_https, console]
+  level: DEBUG

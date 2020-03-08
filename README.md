@@ -33,6 +33,18 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+## Configure Configuration
+
+asd
+
+## Configure Logging
+
+asd
+
+## Configure Nofications
+
+asd
+
 ## TODO
 
 - Use the Alpine distro in the Dockerfile to minimise the docker image size

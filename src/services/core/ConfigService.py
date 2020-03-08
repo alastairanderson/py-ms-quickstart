@@ -29,6 +29,7 @@ class ConfigService:
             self.version = config_data["about"]["version"]
             self.build_config = config_data["about"]["build_config"]
 
+            # Port that the Flask API is available on
             # os.environ['PORT']
             self.hosting_port = os.environ['HOSTING_PORT'] if 'HOSTING_PORT' in os.environ else config_data["hosting"]["port"]
 

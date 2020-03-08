@@ -1,18 +1,29 @@
-
-
 # For building an API - see server.py
 Flask==1.0.2
+# https://pypi.org/project/Flask/
 
 # Services.Core.NotificationService
 slackclient==1.3.0
+# https://pypi.org/project/slackclient/
 
 # Testing framework of choice
 pytest==4.6.3
+# https://pypi.org/project/pytest/
 
 # For HTML parsing
 # beautifulsoup4==4.7.1
+# https://pypi.org/project/beautifulsoup4/
 # lxml==4.3.4
+# https://pypi.org/project/lxml/
+
 
 # For ML
-# Tensorflow
-# PyTorch
+# tensorflow==2.1.0
+# https://pypi.org/project/tensorflow/
+# pytorch
+# https://pypi.org/project/pytorch/
+
+
+# For Docker interactions
+pytest==4.2.0
+# https://pypi.org/project/docker/
