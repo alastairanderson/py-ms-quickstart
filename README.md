@@ -7,6 +7,7 @@ A quickstart set of python scripts to get up-and-running with development quickl
 ## Features
 
 - Project structure to get started writing a Python microservice running in Docker with.
+- Uses [pytest](https://docs.pytest.org/en/latest/) as the testing framework. Others are [available](https://pythontesting.net/start-here/).
 
 ## Roadmap
 
@@ -44,4 +45,9 @@ pip install -r requirements.txt
 
 - For production builds, look at using nginx https://ianlondon.github.io/blog/deploy-flask-docker-nginx/
 
-- Integrate with IdServ
+- Integrate with IdServ 
+  - https://app.pluralsight.com/player?course=python-flask-rest-api&author=sanjay-rai&name=4741808f-d7ef-4c80-8430-719f70718013&clip=0&mode=live
+
+  - http://docs.identityserver.io/en/latest/topics/apis.html
+
+

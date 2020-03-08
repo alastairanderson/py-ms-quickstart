@@ -1,8 +1,18 @@
 
 
-# Remove if not using as an API
+# For building an API - see server.py
 Flask==1.0.2
 
 # Services.Core.NotificationService
 slackclient==1.3.0
 
+# Testing framework of choice
+pytest==4.6.3
+
+# For HTML parsing
+# beautifulsoup4==4.7.1
+# lxml==4.3.4
+
+# For ML
+# Tensorflow
+# PyTorch
