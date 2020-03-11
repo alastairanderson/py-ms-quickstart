@@ -67,10 +67,6 @@ class ConfigService:
 
             self.batch_minutes = int(config_data["notifications"]["batch_minutes"])
             self.message_file_locked = config_data["notifications"]["message_file_locked"]
-            
-            # self.message_file = self.root_folder + '/logs/news/ft/notifications.log'
-
-
 
         except KeyError as ke:
             print(f"There was an issue retrieving {ke.args[0]}")
