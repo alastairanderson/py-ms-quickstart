@@ -72,3 +72,18 @@ class DateUtils:
     @staticmethod
     def set_specific_time(initial_date, hour_of_date=0, minute_of_date=0, second_of_date=0, microsecond_of_date=0):
         return initial_date.replace(hour=hour_of_date, minute=minute_of_date, second=second_of_date, microsecond=microsecond_of_date)
+
+
+
+#region sandbox
+'''
+An area to quickly test out functionality works as expected
+Utility classes should work inside of a virtual environment on their own, without the requirement of instantiating other classes
+'''
+# date_str_1 = "2020-02-14 19:30"
+# date_1 = DateUtils.convert_date_str_to_date(date_str_1, "%Y-%m-%d %H:%M")
+# print(type(date_1))      # <class 'datetime.datetime'>
+
+# date_str_2 = DateUtils.convert_date_to_date_str(date_1, "%Y-%m-%d %H:%M")
+# print(type(date_str_2))  # <class 'str'>
+#endregion

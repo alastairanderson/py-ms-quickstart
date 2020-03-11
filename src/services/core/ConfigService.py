@@ -15,6 +15,25 @@ class ConfigService:
         # hosting
         self.hosting_port = None
 
+        # notifications
+        self.email_notifications_enabled = None
+        self.email_username = None
+        self.email_password = None
+        self.email_server = None
+        self.email_port = None
+        self.email_to_notify = None
+        
+        self.slack_notifications_enabled = None
+        self.slack_token = None
+        self.slack_account = None
+        self.slack_username = None
+
+        # self.notifications_last_sent = None
+        self.batch_minutes = None
+        self.message_file_locked = False
+        self.message_file = None
+
+
         self.__read_config()
 #endregion
 
@@ -32,6 +51,25 @@ class ConfigService:
             # Port that the Flask API is available on
             # os.environ['PORT']
             self.hosting_port = os.environ['HOSTING_PORT'] if 'HOSTING_PORT' in os.environ else config_data["hosting"]["port"]
+
+            # notifications
+            self.email_notifications_enabled = config_data["notifications"]["email"]["enabled"]
+            self.email_username = os.environ[self.service_name + '__EMAIL_USERNAME']
+            self.email_password = os.environ[self.service_name + '__EMAIL_PASSWORD']
+            self.email_server = os.environ[self.service_name + '__EMAIL_SERVER']
+            self.email_port = int(os.environ[self.service_name + '__EMAIL_PORT'])
+            self.email_to_notify = os.environ[self.service_name + '__EMAIL']
+
+            self.slack_notifications_enabled = config_data["notifications"]["slack"]["enabled"]
+            self.slack_token = os.environ[self.service_name + '__SLACK_TOKEN']
+            self.slack_account = os.environ[self.service_name + '__SLACK_ACCOUNT']
+            self.slack_username = os.environ[self.service_name + '__SLACK_USERNAME']
+
+            self.batch_minutes = int(config_data["notifications"]["batch_minutes"])
+            self.message_file_locked = config_data["notifications"]["message_file_locked"]
+            
+            # self.message_file = self.root_folder + '/logs/news/ft/notifications.log'
+
 
 
         except KeyError as ke:

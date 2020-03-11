@@ -13,3 +13,13 @@ class TimeUtils:
     @staticmethod
     def sleep_for_time_period(seconds):
         time.sleep(seconds)
+
+#region sandbox
+# print("hello")
+# TimeUtils.sleep_for_time_period(5)
+# print("world")
+
+# print("hello")
+# TimeUtils.sleep_for_random_time_period(2,4)
+# print("world")
+#endregion

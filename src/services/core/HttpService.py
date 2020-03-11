@@ -3,7 +3,7 @@ from random import randint
 import requests
 from urllib.parse import urljoin
 import zlib
-from services.core.DockerService import DockerService
+from utilities.core.DockerUtils import DockerUtils
 from utilities.core.OsUtils import OsUtils
 from utilities.core.TimeUtils import TimeUtils
 
@@ -15,11 +15,9 @@ class HttpService:
     def __init__(
         self,
         config_service,
-        docker_service,
         log_service
     ):
         self._config = config_service
-        self._docker = docker_service
         self.req_i = 0        # No of requests that have been made since last ip change
         self.n_requests = 25  # No of requests before rotating the ip address
         self._logger = log_service.get_logger()
@@ -160,6 +158,6 @@ class HttpService:
 
     def __rotate_ip_address(self):
         self._logger.info(f"Restarting docker proxy to rotate IP...")
-        self._docker.restart_container(self._config.tor_container_id)
+        DockerUtils.restart_container(self._config.tor_container_id)
         self._logger.info(f"New IP address: {self.get_ip_address()}")
 #endregion
