@@ -57,6 +57,8 @@ The Services/core/LogService makes use of Python's
 write log messages and their metadata in a JSON format to a txt file.
 
 The path to the txt file is configured in config/config.json (see previous section).
+There is also an additional path set within the logging.yml file if required - ensure
+the two paths are set to point to the correct location between the two files.
 
 Each class that requires logging passes in the instance of LogService that is created
 in server.py and calls get_logger() to retrieve a logger object, which you then call
